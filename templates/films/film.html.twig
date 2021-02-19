@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <p>Liste des films :</p> <br/>
+        {% for _film in Film %}
+            <div class="row">
+                <div class="col-sm">
+                    {{ _film.nom }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    {{ _film.synopsys }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    {{ _film.type }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    {{ _film.date | date("m/d/y") }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock body %}
